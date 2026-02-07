@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine, Golu? 💕</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hearts-background">
+            <!-- Animated falling hearts -->
+        </div>
+        
+        <div class="valentine-card">
+            <h1 class="title">Hi Golu! 💕</h1>
+            <p class="message">Will you be my Valentine?</p>
+            
+            <div class="button-container">
+                <button class="btn btn-yes" onclick="handleYes()">YES ❤️</button>
+                <button class="btn btn-no" id="noBtn" onmouseover="moveNoButton()" onclick="handleNo()">NO 😈</button>
+            </div>
+            
+            <div id="celebration" class="celebration hidden">
+                <h2>🎉 Yay! I Love You Golu! 🎉</h2>
+                <p>You just made me the happiest! ❤️💕💖</p>
+            </div>
+        </div>
+        
+        <audio id="bgMusic" autoplay loop>
+            <source src="https://assets.mixkit.co/active_storage/musics/2291-a-peaceful-spring-morning.mp3" type="audio/mpeg">
+        </audio>
+        
+        <div class="music-control">
+            <button onclick="toggleMusic()" class="music-btn">🎵 Music</button>
+            <input type="range" id="volumeControl" min="0" max="100" value="50" class="volume-slider" onchange="changeVolume()">
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
