@@ -1,0 +1,31 @@
+/* style.css */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+.container { position: relative; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; }
+.hearts-background { position: absolute; width: 100%; height: 100%; pointer-events: none; }
+.heart { position: absolute; font-size: 2rem; opacity: 0.7; animation: fall 8s linear infinite; }
+@keyframes fall { to { transform: translateY(100vh); opacity: 0; } }
+.valentine-card { background: white; border-radius: 20px; padding: 50px; box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3); text-align: center; z-index: 10; animation: popIn 0.5s ease-out; }
+@keyframes popIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+.title { font-size: 3rem; color: #e91e63; margin-bottom: 20px; animation: heartbeat 1.5s ease-in-out infinite; }
+@keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+.message { font-size: 1.5rem; color: #333; margin-bottom: 40px; }
+.button-container { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.btn { padding: 15px 40px; font-size: 1.2rem; border: none; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-weight: bold; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+.btn-yes { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; }
+.btn-yes:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(245, 87, 108, 0.5); }
+.btn-no { background: linear-gradient(135deg, #4b4b4b 0%, #000000 100%); color: white; position: relative; }
+.btn-no:hover { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%); transform: rotate(-15deg); }
+.celebration { margin-top: 30px; opacity: 1; animation: celebrate 0.8s ease-out; }
+.celebration h2 { font-size: 2.5rem; color: #e91e63; margin-bottom: 15px; }
+.celebration p { font-size: 1.3rem; color: #666; }
+.hidden { display: none; }
+.celebration.show { display: block; }
+@keyframes celebrate { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes confetti-pop { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(500px) rotate(720deg); opacity: 0; } }
+.confetti { position: fixed; pointer-events: none; animation: confetti-pop 3s ease-out forwards; }
+.music-control { position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; align-items: center; z-index: 100; }
+.music-btn { padding: 10px 20px; background: white; border: none; border-radius: 20px; cursor: pointer; font-size: 1rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; }
+.music-btn:hover { transform: scale(1.1); }
+.volume-slider { width: 100px; cursor: pointer; }
+@media (max-width: 768px) { .valentine-card { padding: 30px; margin: 20px; } .title { font-size: 2rem; } .message { font-size: 1.2rem; } .btn { padding: 12px 30px; font-size: 1rem; } }
